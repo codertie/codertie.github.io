@@ -1,10 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Tie's Resume</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_yzt1gd4cc1bgldi.css">
+<style>
+    .clearfix:after{
+        display: block;
+        content: "";
+        clear: both;
+    }
+    body{
+        font-family: 'HanHei SC', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+        /*font-family: "Helvetica Neue","Helvetica","STHeitiSC-Light","Arial",sans-serif;*/
+        /*font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;*/
+        /*font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;*/
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-weight: 200;
+    }
+    ul,li,h3{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .nav-ct{
+        height: 48px;
+        background-color: rgba(31,31,31,0.8) ;
+        line-height: 48px;
+        border-bottom: 1px solid #3d3d3d;
+
+    }
+    .nav-bar{
+        width: 1050px;
+        margin: 0 auto;
+    }
+    .nav-bar .icon{
+        display: block;
+        float: left;
+        font-weight: 200;
+    }
+    .nav-bar>ul{
+        float: right;
+    }
+    .nav-bar>ul>li{
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 0.5rem;
+
+    }
+    
+    .nav-bar>ul>li:hover{
+        color: #6bf;
+
+    }
+    .info-ct{
+        width: 1050px;
+        height: 300px;
+        margin: 50px auto;
+        border-radius: 15px;
+        border: 1px solid #3d3d3d;
+        perspective: 200px;
+        transition: all 0.2s;
+        transition-timing-function: linear;
+        transform-style: preserve-3d;
+        background-color: #121212;
+        box-shadow: 0 0 500px 1px rgba(255,255,255,0.1);
+        position: relative;
+    }
+    .info-ct .info{
+        position: absolute;
+        top: 48px;
+        right: 100px;
+        font-size: 1.2rem;
+        /*font-weight: 100;*/
+    }
+    .info-ct .hello{
+        position: absolute;
+        left: 80px;
+    }
+    .info-ct .hello>span{
+        font-size: 7rem;
+        font-weight: 100;
+        line-height: 300px;
+        margin: 0;   
+    }
+    .info-ct .hello>.cursor{
+        animation:flicker 1s infinite;
+    }
+    @keyframes flicker{
+        0%{opacity: 1;}
+        50%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+    .head-portrait{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: -47px;
+        color: #6bf;
+    }
+    .head-portrait>.face-left{
+        position: absolute;
+        font-size:  5rem;
+        left: 0;
+    }
+    .head-portrait>.eye-left{
+        position: absolute;
+        font-size:  1.5rem;
+        left: 33px;
+        top: 15px;
+    }
+    .head-portrait>.eye-right{
+        position: absolute;
+        font-size:  1.5rem;
+        left: 60px;
+        top: 15px;
+    }
+    .head-portrait>.mouth{
+        position: absolute;
+        left: 38px;
+        top: 40px;
+        font-size: 2.5rem;
+        transform: rotate(-90deg);
+    }
+    .head-portrait>.face-right{
+        position: absolute;
+        font-size:  5rem;
+        left: 80px;
+        top: 1px;
+    }
+</style>
 </head>
 <body>
-    <h3>hello,world</h3>
+    <div class="nav-ct ">
+        <div class="nav-bar .clearfix">
+            <h3 class="icon">Tie's Resume</h3>
+            <ul class="nav-btn .clearfix">
+                <li>个人资料</li>
+                <li>擅长技能</li>
+                <li>项目经历</li>
+                <li>工作经历</li>
+            </ul>
+        </div>
+    </div>
+    <div class="info-ct">
+        <div class="hello"><span class="text"></span><span class="cursor">|</span></div>
+        <div class="head-portrait">
+            <i class="face-left iconfont icon-kuohao1"></i>
+            <i class="eye-left iconfont icon-ux14005705018766217"></i>
+            <i class="eye-right iconfont icon-ux14005705018766217"></i>
+            <i class="mouth iconfont icon-kuohaozuo"></i>
+            <i class="face-right iconfont icon-kuohao"></i>
+        </div>
+        <div class="info">
+            <p>I = {</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;姓名: '赵童',</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;年纪: '26',</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;手机: '13287860061',</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;weChat: '674596806'</br>
+            }</p>
+        </div>
+    </div>
+    <div class="skill-ct"></div>
+    <div class="pe-ct"></div>
+    <div class="we-ct"></div>
+
+<script>
+    function writing(){
+        var str = '';
+        var strArr = ['N','I'];
+        var index = 0;
+        var ni = setInterval(function(){
+            if(index < strArr.length){
+                str += strArr[index];
+                index++;
+                $('.hello>.text').text(str);
+            }
+        },300)
+        var niOver = setTimeout(function(){
+            clearInterval(ni);
+            str = '你';
+            $('.hello>.text').text(str);
+        },900)
+        var hao = setTimeout(function(){
+            strArr = ['H','A','O'];
+            index = 0;
+            setInterval(function(){
+                if(index<strArr.length){
+                    str += strArr[index];
+                    index++;
+                    $('.hello>.text').text(str);
+                }
+            },300)
+        },1200)
+        setTimeout(function(){
+            $('.hello>.text').text('你好');
+        },2400);
+        setTimeout(function(){
+            $('.hello>.text').text('你好!');
+        },2800);
+        setTimeout(function(){
+            $('.cursor').remove();
+        },4200);
+    }
+    function panel3d($div){
+        $div.on('mouseover',function(){
+            var offsetX = $(this).offset().left,
+                offsetY = $(this).offset().top,
+                height = parseInt($(this).css('height')),
+                width = parseInt($(this).css('width'));
+            $(this).addClass("threeD");
+            $('.threeD').on('mousemove',function(){
+                var volueX = (event.pageX - offsetX - width/2)/(width/2),
+                    volueY = (event.pageY - offsetY - height/2)/(height/2);
+                $(this).css('transform','perspective(800px) rotateY(' + volueX*3 +'deg) rotateX(' + -volueY*3 +'deg)');
+            })
+        })
+        $div.on('mouseleave',function(){
+            $(this).removeClass("threeD");
+            $(this).css('transform','perspective(800px) rotateY(0deg) rotateX(0deg)');
+        })
+    }
+    panel3d($('.info-ct'));
+</script>
 </body>
 </html>
