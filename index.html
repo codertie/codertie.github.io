@@ -91,12 +91,30 @@
     .info-ct .hello>.cursor{
         animation:flicker 1s infinite;
     }
+    .smile.eye-right{
+        animation: 1s eye ;
+    }
+    .smile.mouth{
+        animation: 1s mouth ;
+    }
     @keyframes flicker{
         0%{opacity: 1;}
         50%{opacity: 0;}
         100%{opacity: 1;}
     }
+    @keyframes eye{
+        0%{transform: perspective(600px) rotateX(0);}
+        50%{transform: perspective(600px) rotateX(60deg);}
+        100%{transform: perspective(600px) rotateX(0);}
+    }
+    @keyframes mouth{
+        0%{transform: rotate(-90deg);}
+        50%{transform: rotate(-110deg);}
+        100%{transform: rotate(-90deg);}
+    }
     .head-portrait{
+        width: 110px;
+        height: 90px;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -171,6 +189,24 @@
     <div class="we-ct"></div>
 
 <script>
+    panel3d($('.info-ct'));
+    var smileStatus = false;
+    $('.head-portrait').on('mouseenter',function(){
+        smile();
+    })
+    writing();
+    function smile(){
+        if(!smileStatus){
+            smileStatus = true;
+            $('.eye-right').addClass('smile');
+            $('.mouth').addClass('smile');
+            setTimeout(function(){
+                $('.eye-right').removeClass('smile');
+                $('.mouth').removeClass('smile');
+                smileStatus = false;
+            },1500)
+        }
+    }
     function writing(){
         var str = '';
         var strArr = ['N','I'];
@@ -206,7 +242,8 @@
         },2800);
         setTimeout(function(){
             $('.cursor').remove();
-        },4200);
+            smile();
+        },3600);
     }
     function panel3d($div){
         $div.on('mouseover',function(){
@@ -226,7 +263,7 @@
             $(this).css('transform','perspective(800px) rotateY(0deg) rotateX(0deg)');
         })
     }
-    panel3d($('.info-ct'));
+    
 </script>
 </body>
 </html>
