@@ -211,7 +211,7 @@
                 }
                 
                 function getYYMMDD(date){
-                    return (date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate());
+                    return (date.getFullYear() + '/' + (parseInt(date.getMonth())+1) + '/' + date.getDate());
                 }
             }
             this.$picker.find('.display').text(display);
