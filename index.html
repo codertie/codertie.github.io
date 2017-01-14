@@ -682,7 +682,7 @@
 <script>
     panel3d($('.info-ct'));
     var writingNow = false;
-    var fmReady = false;
+    // var fmReady = false;
     var smileStatus = false;
     $('.head-portrait').on('mouseenter',function(){
         smile();
@@ -699,7 +699,10 @@
         calculateStatus = true;
         var value = window.scrollY+window.innerHeight;
         $navBtnLi.removeClass('blue');
-        if(window.innerHeight>752 && value<=window.innerHeight){
+        if(window.scrollY === 0){
+            $navBtnLi.eq(0).addClass('blue');
+             smile();
+        }else if(window.innerHeight>752 && value<=window.innerHeight){
             $navBtnLi.eq(0).addClass('blue');
         }else if(value<752){
             $navBtnLi.eq(0).addClass('blue');
@@ -881,16 +884,15 @@
         },2400);
         setTimeout(function(){
             $('.hello>.text').text('你好!');
-            smile();
         },2800);
         setTimeout(function(){
             $('.cursor').remove();
-            
+            smile();
             writingNow = false;
-            if(!fmReady){
-                fm = new FmPlayer();
-                fmReady = true;
-            }
+            // if(!fmReady){
+            //     fm = new FmPlayer();
+            //     fmReady = true;
+            // }
             
         },3600);
     }
