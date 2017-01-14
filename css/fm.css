@@ -100,6 +100,7 @@ p,span{
 }
 .lyric-ct .lyric-ul{
     /*display: none;*/
+    width: 100%;
     list-style: none;
     position: absolute;
     top: 0px;
