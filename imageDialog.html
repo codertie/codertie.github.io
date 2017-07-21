@@ -292,9 +292,11 @@ http://at.alicdn.com/t/font_egtz3xk3mbc323xr.css">
             this.imgStyle.transformOrigin = '50% 50%';
           },
           loading() {
+            this.imgStyle.cursor = 'progress';
             document.body.style.cursor = 'progress';
           },
           loaded() {
+            this.imgStyle.cursor = ['-webkit-grab', 'grab'];
             document.body.style.cursor = 'auto';
           },
         },
