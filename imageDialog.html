@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="
+http://at.alicdn.com/t/font_egtz3xk3mbc323xr.css">
   </head>
   <body>
     <div id="app">
@@ -32,7 +34,6 @@
                 @mouseleave.prevent="mouseLeave"
                 @mousemove.prevent="mouseMove"
                 @mousewheel.prevent="mouseWheel">
-              <img src="img/loading.gif" :style="loadingStyle">
               <button class="close" :style="Object.assign({},btnStyle, closeBtnStyle)" @click="isShow = false">x</button>
             </div>
             <div v-show="isShow" class="shadow" :style="shadowStyle"></div>
@@ -130,9 +131,6 @@
             top: '20px',
             right: '30px',
           },
-          loadingStyle: {
-
-          },
         }},
         watch: {
           ctHeight: function(newValue) {
@@ -144,11 +142,13 @@
             this.setImgSize();
           },
           index: function(newValue) {
+            this.loading();
             this.imgStyle.opacity = 0;
             this.transformInit();
             this.$refs.img.onload = async () => {
               await this.setImgRatio();
               this.setImgSize();
+              this.loaded();
               this.imgFadeIn();
             };
           },
@@ -290,6 +290,12 @@
           transformInit() {
             this.imgStyle.transform = 'scale(1)';
             this.imgStyle.transformOrigin = '50% 50%';
+          },
+          loading() {
+            document.body.style.cursor = 'progress';
+          },
+          loaded() {
+            document.body.style.cursor = 'auto';
           },
         },
         mounted() {
