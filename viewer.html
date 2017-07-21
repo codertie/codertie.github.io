@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>image-viewer</title>
     <link rel="stylesheet" href="
 http://at.alicdn.com/t/font_egtz3xk3mbc323xr.css">
   </head>
   <body>
     <div id="app">
-      <image-dialog
+      <image-viewer
         :img-list="imgList"
         :is-show="showImg"
-      ></image-dialog>
+      ></image-viewer>
     </div>
 
     <script src="https://unpkg.com/vue" charset="utf-8"></script>
     <script>
-      Vue.component('image-dialog', {
+      Vue.component('image-viewer', {
         template:
           `<div :style="bgStyle">
             <div v-show="isShow" :style="ctStyle">
