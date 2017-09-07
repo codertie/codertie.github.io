@@ -14,10 +14,7 @@ body {
   font-size: 0.8rem;
   width: 100%;
   overflow-x: hidden;
-}
-#resume {
-  width: 100%;
-  overflow-x: hidden;
+  position:relative;
 }
 h1,h2,h3,h4,h5,h6,a,p {
   margin: 0;
