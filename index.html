@@ -1,19 +1,124 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tie's resume</title>
-    <style media="screen">
-      body {
-        background-color: black;
-      }
-      .welcome {
-        color: white;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <p class="welcome">欢迎光临，正在制作中^_^</p>
-  </body>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>Tie's resume</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <!--[if lte IE8]>
+    <p class="browser-upgrade">浏览器太老啦！到<a href="http://browserhappy.com">这里</a>更新一下吧。</p>
+  <![endif]-->
+  <article id="resume" v-cloak>
+    <header class="header">
+      <aside class="welcome">
+        <h1>{{msg}}<span class="blue cursor">|</span></h1>
+      </aside>
+      <section class="contact">
+        <h2>赵&nbsp&nbsp&nbsp&nbsp童<span class="sub">Web前端开发</span></h2>
+        <p>
+          <span>男</span>
+          <span>27岁</span>
+          <span>13287860061</span>
+          <span>codertie@gmail.com</span>
+        </p>
+      </section>
+    </header>
+    <div class="person">
+      <svg data-name="person" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285.1 191.43">
+        <path d="M259,182c-1.25-2.5-1.44-23.93-.19-27.68s1.25-28.74,1.25-28.74c-2.5,1.25-2.5-12.5-2.5-12.5s-2.5-5-2.5-16.25c0-22.49,15-26.24,15-26.24-5-17.5,7.5-16.25,7.5-16.25,8.75-1.25,3.75,16.25,3.75,16.25,11.25,1.25,10,50,10,50h-1.25s-2.5,18.75-5,30-1.25,28.74-1.25,28.74a9.93,9.93,0,0,1,8.75,5h-15Zm13.55-46.42-5,18.75v27.49h6.25S273.8,140.58,272.55,135.58Z" transform="translate(-7.45 -54.29)"/>
+        <path class="cls-1" d="M277.55,184.32c-26.24,15-96.23,21.24-96.23,21.24s-103.72,31.24-122.47,35-12.5-10-12.5-10C2.62,254.3,7.62,243.05,7.62,243.05c22.49-30,57.49-26.24,57.49-26.24,7.5-16.25,71.23-25,92.48-26.24S259,182,259,182Zm-28.74,2.5s-25-1.25-53.74,10C195.07,196.81,261.31,190.57,248.81,186.82Z" transform="translate(-7.45 -54.29)"/>
+      </svg>
+    </div>
+    <div class="triangle"></div>
+    <div class="container">
+      <div class="main">
+        <section class="profile">
+          <h2>01.&nbsp<span>自我描述</span></h2>
+          <ul>
+            <li>-&nbsp&nbsp熟悉<span class="blue">Vue.js</span>,掌握Vue单文件组件,会使用Vue-cli进行项目开发环境搭建</li>
+            <li>-&nbsp&nbsp熟悉<span class="blue">webpack</span>,会使用loader对代码进行处理</li>
+            <li>-&nbsp&nbsp熟悉<span class="blue">CSS 3</span>/Sass/Flex/响应式布局/移动端 rem 适配,掌握浮动/定位/盒模型 /BFC等CSS核心概念</li>
+            <li>-&nbsp&nbsp熟悉<span class="blue">HTML 5</span>,对代码可读性/规范性/语义化有一定认识,能熟练开发符合 w3c 规范的页面</li>
+            <li>-&nbsp&nbsp熟悉<span class="blue">ES 6</span>语法,熟悉 Class/Promise/async 函数/Module,掌握事件模型 /DOM/BOM/AJAX/JSONP/跨域/闭包/原型链/继承等相关概念的原理和使用方法</li>
+            <li>-&nbsp&nbsp对自己代码质量有高要求,注释清晰,工作中会自主参照 <span class="blue">Airbnb Code Style</span> </li>
+            <li>-&nbsp&nbsp会使用 <span class="blue">Chorme DevTools</span> 进行调试</li>
+            <li>-&nbsp&nbsp良好的<span class="blue">逻辑</span>思维能力和团队合作能力,有快速分析和解决问题的能力</li>
+            <li>-&nbsp&nbsp有解决问题、钻研新技术的<span class="blue">兴趣</span>和能力,善于交流和表达</li>
+          </ul>
+        </section>
+        <section class="skillset">
+          <h2>02.&nbsp<span>常用技能</span></h2>
+          <ul>
+            <li v-for="item in skillList">
+              <p>{{item.name}}</p>
+              <vue-progress class="progress" :value="item.percentage"></vue-progress>
+            </li>
+          </ul>
+        </section>
+        <section class="experience">
+          <h2>03.&nbsp<span>工作经历</span></h2>
+          <div>
+            <h3>哈尔滨工业大学(威海)软件系实验室&nbsp&nbspWeb前端&nbsp&nbsp2016.6-至今</h3>
+            <ul class="light-gray">
+              <li>-&nbsp&nbsp巡检系统web前端开发</li>
+              <li>-&nbsp&nbspUI的整体设计</li>
+              <li>-&nbsp&nbsp参与项目的原型设计</li>
+            </ul>
+          </div>
+          <div>
+            <h3>威海九龙庄园有限公司&nbsp&nbspUI设计&nbsp&nbsp2015.2-2015.12</h3>
+            <ul class="light-gray">
+              <li>-&nbsp&nbsp移动端商城界面设计</li>
+              <li>-&nbsp&nbsp曜阳中国画院墙面介绍设计、手提袋、信封等纸制品设计</li>
+              <li>-&nbsp&nbsp威海港进口商品拍摄、修图、商品详情页设计</li>
+            </ul>
+          </div>
+        </section>
+        <section class="project">
+          <h2>04.&nbsp<span>项目经验</span></h2>
+          <div>
+            <h3>公司</h3>
+            <ul class="light-gray">
+              <a rel="noopener norefferrer" target="_blank" href="img/pdaj.jpg">
+                <li>
+                  <img src="./img/pdaj.jpg" alt="平度市安全生产监督管理系统">
+                  <span>平度市安全生产监督管理系统<br>Web端开发/原型/UI&nbsp&nbsp2017.3-2017.6</span>
+                </li>
+              </a>
+              <a rel="noopener norefferrer" target="_blank" href="img/jnsl.png">
+                <li>
+                  <img src="./img/jnsl.png" alt="济宁市水利局防汛巡查系统">
+                  <span>济宁市水利局防汛巡查系统<br>Web端开发/原型/UI&nbsp&nbsp2016.10-2016.12</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <div>
+            <h3>个人</h3>
+            <p>
+              <span v-for="item in practiceList"><a rel="noopener norefferrer" target="_blank" :href="item.href">{{item.title}}</a></span>
+            </p>
+          </div>
+        </section>
+        <!-- <section class="practice">
+          <h2>05.<span>个人练习</span></h2>
+        </section> -->
+      </div>
+    </div>
+    <footer>
+      <p>-&nbsp&nbspby&nbsp&nbsptie&nbsp&nbsp2017&nbsp&nbsp-</p>
+    </footer>
+  </article>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>
