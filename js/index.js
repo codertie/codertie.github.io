@@ -1,12 +1,12 @@
 Vue.component('vue-progress',{
-  template: `<div>
-              <div :style="fullBarStyle">
-                <div :style="progressBarStyle"></div>
-              </div>
-            </div>`,
+  template: '<div>' + 
+              '<div :style="fullBarStyle">' + 
+                '<div :style="progressBarStyle"></div>' +
+              '</div>' +
+            '</div>',
   props: ['value'],
   created() {
-    this.progressBarStyle.width = `${this.value}%`;
+    this.progressBarStyle.width = this.value + '%';
   },
   data() { return {
     fullBarStyle: {
