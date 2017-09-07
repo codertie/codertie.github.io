@@ -52,6 +52,9 @@ new Vue({
       title: '3D-Banner',
       href: 'pages/3dBanner.html',
     },{
+      title: 'vue-todolist',
+      href: 'pages/vue-todos/index.html',
+    },{
       title: 'FMplayer',
       href: 'http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E8%B5%B5%E7%AB%A5/FMplayerJSONP.html',
     },{
