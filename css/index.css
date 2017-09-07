@@ -12,6 +12,8 @@ body {
   color: var(--dark-gray);
   font-weight: lighter;
   font-size: 0.8rem;
+  width: 100%;
+  overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,h6,a,p {
   margin: 0;
@@ -63,7 +65,7 @@ ul,li {
   align-items: flex-end;
 }
 .welcome {
-  width: 300px;
+  max-width: 300px;
 }
 .welcome h1 {
   font-size: 100px;
@@ -78,7 +80,7 @@ ul,li {
   100%{opacity: 1;}
 }
 .contact {
-  width: 420px;
+  max-width: 420px;
   margin-top: 20px;
 }
 .contact .sub {
@@ -120,7 +122,11 @@ ul,li {
 .main > section {
   width: 40%;
   flex-basis: 50;
-  min-width: 360px;
+  /* min-width: 360px; */
+}
+.person {
+  width: 100vw;
+  overflow: hidden;
 }
 .person > svg {
   position: absolute;
