@@ -47,6 +47,7 @@
             <li>-&nbsp&nbsp熟悉<span class="blue">CSS 3</span>/Sass/Flex/响应式布局/移动端 rem 适配,掌握浮动/定位/盒模型 /BFC等CSS核心概念</li>
             <li>-&nbsp&nbsp熟悉<span class="blue">HTML 5</span>,对代码可读性/规范性/语义化有一定认识,能熟练开发符合 w3c 规范的页面</li>
             <li>-&nbsp&nbsp熟悉<span class="blue">ES 6</span>语法,熟悉 Class/Promise/async 函数/Module,掌握事件模型 /DOM/BOM/AJAX/JSONP/跨域/闭包/原型链/继承等相关概念的原理和使用方法</li>
+            <li>-&nbsp&nbsp熟悉<span class="blue">微信小程序</span>,有相关的开发经验。</li>
             <li>-&nbsp&nbsp对自己代码质量有高要求,注释清晰,工作中会自主参照 <span class="blue">Airbnb Code Style</span> </li>
             <li>-&nbsp&nbsp会使用 <span class="blue">Chorme DevTools</span> 进行调试</li>
             <li>-&nbsp&nbsp良好的<span class="blue">逻辑</span>思维能力和团队合作能力,有快速分析和解决问题的能力</li>
@@ -86,23 +87,20 @@
           <div>
             <h3>公司</h3>
             <ul class="light-gray">
-              <a rel="noopener norefferrer" target="_blank" href="img/pdaj.jpg">
-                <li>
+                <li @click.prevent="showImg(0)">
                   <img src="./img/pdaj.jpg" alt="平度市安全生产监督管理系统">
                   <span>平度市安全生产监督管理系统<br>Web端开发/原型/UI&nbsp&nbsp2017.3-2017.6</span>
                 </li>
-              </a>
-              <a rel="noopener norefferrer" target="_blank" href="img/jnsl.png">
-                <li>
+                <li @click.prevent="showImg(2)">
                   <img src="./img/jnsl.png" alt="济宁市水利局防汛巡查系统">
                   <span>济宁市水利局防汛巡查系统<br>Web端开发/原型/UI&nbsp&nbsp2016.10-2016.12</span>
                 </li>
-              </a>
             </ul>
           </div>
           <div>
             <h3>个人</h3>
             <p>
+              <span v-for="item in imgPracticeList"><a href="" @click.prevent="showImg(item.imgIndex)">{{item.title}}</a></span>
               <span v-for="item in practiceList"><a rel="noopener norefferrer" target="_blank" :href="item.href">{{item.title}}</a></span>
             </p>
           </div>
@@ -115,6 +113,7 @@
     <footer>
       <p>-&nbsp&nbspby&nbsp&nbsptie&nbsp&nbsp2017&nbsp&nbsp-</p>
     </footer>
+    <image-viewer @change-show="changeShow" :init-index="imgIndex" :show="imgShow" :img-list="imgList"></image-viewer>
   </article>
 
   <script src="https://unpkg.com/vue"></script>
