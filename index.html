@@ -15,7 +15,11 @@
   <!--[if IE]>
     <p class="browser-upgrade">IE对ES6的支持不太好，请用一下别的浏览器吧:<a href="http://browserhappy.com">看这里</a>。</p>
   <![endif]-->
-  <article id="resume" v-cloak>
+  <article id="resume">
+    <div class="page-loading" v-if="pageLoading">
+      <img src="./img/loading.gif" alt="正在载入">
+    </div>
+    <div v-cloak>
     <header class="header">
       <aside class="welcome">
         <h1>{{msg}}<span class="blue cursor">|</span></h1>
@@ -66,7 +70,7 @@
         <section class="experience">
           <h2>03.&nbsp<span>工作经历</span></h2>
           <div>
-            <h3>哈尔滨工业大学(威海)软件系实验室&nbsp&nbspWeb前端&nbsp&nbsp2016.6-至今</h3>
+            <h3>哈尔滨工业大学(威海)软件系实验室&nbsp&nbspWeb前端&nbsp&nbsp2016.8-至今</h3>
             <ul class="light-gray">
               <li>-&nbsp&nbsp巡检系统web前端开发</li>
               <li>-&nbsp&nbspUI的整体设计</li>
@@ -74,7 +78,7 @@
             </ul>
           </div>
           <div>
-            <h3>威海九龙庄园有限公司&nbsp&nbspUI设计&nbsp&nbsp2015.2-2015.12</h3>
+            <h3>威海九龙庄园有限公司&nbsp&nbspUI设计&nbsp&nbsp2015.2-2016.2</h3>
             <ul class="light-gray">
               <li>-&nbsp&nbsp移动端商城界面设计</li>
               <li>-&nbsp&nbsp曜阳中国画院墙面介绍设计、手提袋、信封等纸制品设计</li>
@@ -114,6 +118,7 @@
       <p>-&nbsp&nbspby&nbsp&nbsptie&nbsp&nbsp2017&nbsp&nbsp-</p>
     </footer>
     <image-viewer @change-show="changeShow" :init-index="imgIndex" :show="imgShow" :img-list="imgList"></image-viewer>
+  </div>
   </article>
 
   <script src="https://unpkg.com/vue"></script>

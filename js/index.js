@@ -404,10 +404,12 @@ new Vue({
     ],
     imgShow: false,
     imgIndex: 0,
+    pageLoading: true,
   },
   mounted() {
     Vue.nextTick(() => {
-      this.changeMsg()
+      this.changeMsg();
+      this.pageLoading = false;
     })
   },
   methods: {

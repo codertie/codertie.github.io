@@ -61,6 +61,10 @@ ul,li {
 .cls-1{
   fill:#fff;
 }
+.browser-upgrade,
+.page-loading {
+  text-align: center;
+}
 .header {
   width: 90%;
   max-width: 1600px;
@@ -71,7 +75,7 @@ ul,li {
   align-items: flex-end;
 }
 .welcome {
-  max-width: 300px;
+  min-width: 322px;
   min-height: 115px;
 }
 .welcome h1 {
@@ -87,7 +91,7 @@ ul,li {
   100%{opacity: 1;}
 }
 .contact {
-  max-width: 420px;
+  /* min-width: 400px; */
   margin-top: 20px;
 }
 .contact .sub {
