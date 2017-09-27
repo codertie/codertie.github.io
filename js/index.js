@@ -402,7 +402,8 @@ new Vue({
     imgList: [
       './img/pdaj.jpg',
       './img/pdaj2.jpg',
-      './img/jnsl.png',
+      './img/jnsl1.jpg',
+      './img/jnsl2.png',
       './img/wx.jpeg',
     ],
     imgShow: false,
